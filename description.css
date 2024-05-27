@@ -1,0 +1,650 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;500;700&display=swap');
+
+
+*
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body
+{
+    background-color: cadetblue;
+}
+
+
+.header
+{
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: +999;
+}
+.top-header
+{
+    background-color: #F8F8F8;
+}
+.line
+{
+    font-size: 14px;
+}
+.bottom-header
+{
+    background-color: white;
+}
+
+
+.left nav ul li a , .right nav ul li a{
+    color:  black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+.left nav ul li a:hover , .right nav ul li a:hover
+{
+    color: black;
+}
+.left nav ul li .nav-a::after , .right nav ul li .nav-a::after
+{
+    content: '';
+    height: 0px;
+    width: 0%;
+    border-bottom: 1.8px solid black;
+    display: block;
+    transition: all .3s;
+}
+.left nav ul li .nav-a:hover::after , .right nav ul li .nav-a:hover::after
+{
+    width: 100%;
+}
+
+
+.right
+{
+    /* background-color: cadetblue; */
+    display: flex;
+    justify-content: flex-end
+}
+
+#panel {
+    
+    display: none;
+    position: absolute;
+    top: 20%;
+    background-color: whitesmoke;
+    width: 100%;
+    left: 0%;
+    margin-top: 5%;
+    
+}
+#panel {
+    padding: 5px;
+    text-align: center;
+}
+
+.bar-input
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 25%;
+    padding: 5px;
+}
+/* ------------------------------------------ */
+
+.nav-hov
+{
+    position: absolute;
+    z-index: 500;
+    background-color: white;
+    left: 0;
+    transition: all 0.5s ease;
+    margin-top: 25px;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+li:hover  .nav-hov
+{
+    opacity: 1;
+    visibility: visible;
+    margin-top: 15px;   
+}
+
+.nav-hov  .nav-hov-item   img
+{
+    vertical-align: middle;
+    border-radius: 20px 20px;
+    
+}
+
+.nav-hov-con
+{
+    position: absolute;
+    top: 75%;
+}
+.sidearrow
+{
+    opacity: 0;
+    visibility: hidden;
+    margin: 7px 20px;
+}
+.side{
+    position: absolute;
+    left: 0%;
+    color: white;
+    font-size: 15px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+.list-title
+{
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-hov-item:hover .sidearrow
+{
+    opacity: 1;
+    visibility: visible
+}
+.nav-hov-item:hover .side{
+    left: 8%;
+}
+
+
+
+.title-h1::after{
+    content: '';
+    height: 0px;
+    width: 0%;
+    border-bottom: 1.8px solid black;
+    display: block;
+    transition: all .3s;
+}
+.title-h1
+{
+    font-size: 22px;
+}
+.title-h1:hover::after
+{
+    font-size: 22px;
+    line-height: 32px;
+    width: 50%;
+}
+.title-p
+{
+    font-size: 14px;
+}
+.list-item-1
+{
+    border-right: 2px solid #f5f5f5;
+    padding-left: 10px;
+    height: 400px;
+    margin-right: 25px;
+}
+
+.quiz-btn
+{
+    color: black;
+    border-radius: 50px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+    background-color: white;
+    transition: 0.3s all;
+}
+.quiz-btn:hover
+{
+    color: red;
+    background-color: red;
+}
+
+/* Offcanvas */
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Nav Tab Products*/
+.Up-to-down
+{
+    margin-top: 7%;
+}
+@media (min-width:320px) and (max-width:992px)
+{
+  .Up-to-down
+{
+    margin-top: 20%;
+}
+}
+
+.Des-btn
+{
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-decoration: none;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
+
+.Des-btn:hover {
+    color: white;
+    background-color: black;
+}
+
+/* Product Row */
+
+#products-container{
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.product {
+    flex: 0 0 30%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    transition: all 0.5s ease-in-out;
+}
+
+.product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product:hover img {
+    transform: scale(1.05);
+}
+
+.product h3 {
+    margin: 10px 0;
+}
+
+.product1-con {
+    padding: 20px;
+    background-color: #FCFAFA;
+}
+
+.Addtocard {
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30%;
+    padding-right: 30%;
+    text-decoration: none;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+@media (min-width:320px) and (max-width:720px)
+{
+  .Addtocard {
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-decoration: none;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+}
+
+.Addtocard:hover {
+    color: white;
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    .product {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        flex: 0 0 100%;
+    }
+}
+
+
+
+/* Page Image */
+
+.page-img
+{
+    height: 100vh;
+    width: 100%;
+    background-image: url('img/page-image.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+}
+.page-img-con
+{   
+    position: relative;
+    top: 15%;
+    left: 18px;
+    text-align: center;
+    margin: auto;
+}
+
+.page-image-a
+{
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px 20px;
+    transition: all 0.5s ease;
+}
+
+.page-image-a:hover{
+    background-color: black;
+    color: white;
+}
+
+@media (min-width:320px) and (max-width:480px)
+{
+  
+.page-img
+{
+    height: 100vh;
+    width: 100%;
+    background-image: url('img/page-image.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+.page-img-con
+{   
+    position: relative;
+    top: 15%;
+    padding: 10px;
+    left: 0%;
+    text-align: center;
+    margin: auto;
+}
+
+.page-image-a
+{
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px 20px;
+    transition: all 0.5s ease;
+}
+
+.page-image-a:hover{
+    background-color: black;
+    color: white;
+}
+}
+
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Footer */
+
+
+/* FOOTER */
+
+#footer-input
+{
+    width: 100%;
+    height: 50px;  
+
+}
+
+.footer-span
+{
+    font-size: 10px;
+}
+
+
+.cd-words-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+.cd-words-wrapper b {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+}
+.cd-words-wrapper b.is-visible {
+  position: relative;
+}
+.no-js .cd-words-wrapper b {
+  opacity: 0;
+}
+.no-js .cd-words-wrapper b.is-visible {
+  opacity: 1;
+}
+
+
+/* -------------------------------- 
+
+xloading-bar 
+
+-------------------------------- */
+.cd-headline.loading-bar span {
+  display: inline-block;
+  padding: .2em 0;
+}
+.cd-headline.loading-bar .cd-words-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+.cd-headline.loading-bar .cd-words-wrapper::after {
+  /* loading bar */
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #0096a7;
+  z-index: 2;
+  -webkit-transition: width 0.3s -0.1s;
+  -moz-transition: width 0.3s -0.1s;
+  transition: width 0.3s -0.1s;
+}
+.cd-headline.loading-bar .cd-words-wrapper.is-loading::after {
+  width: 100%;
+  -webkit-transition: width 3s;
+  -moz-transition: width 3s;
+  transition: width 3s;
+}
+.cd-headline.loading-bar b {
+  top: .2em;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.cd-headline.loading-bar b.is-visible {
+  opacity: 1;
+  top: 0;
+}
+
+/* -------------------------------- 
+
+xclip 
+
+-------------------------------- */
+.cd-headline.clip span {
+  display: inline-block;
+  padding: .2em 0;
+}
+.cd-headline.clip .cd-words-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+.cd-headline.clip .cd-words-wrapper::after {
+  /* line */
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #aebcb9;
+}
+.cd-headline.clip b {
+  opacity: 0;
+}
+.cd-headline.clip b.is-visible {
+  opacity: 1;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++ */
+
+
+
+.sidearrow
+{
+    opacity: 0;
+    visibility: hidden;
+    margin: 0%;
+}
+.fy-img:hover .sidearrow
+{
+    opacity: 1;
+    visibility: visible
+}
+
+.side1{
+    position: absolute;
+    left: 10%;
+    color: black;
+    font-size: 15px;
+    /* padding: 10px 20px; */
+    padding: 0%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+.fy-img:hover .side1
+{
+    left: 13%;
+}
+.side2{
+    position: absolute;
+    left: 35%;
+    color: black;
+    font-size: 15px;
+    /* padding: 10px 20px; */
+    padding: 0%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+.fy-img:hover .side2
+{
+    left: 38%;
+}
+.side3{
+    position: absolute;
+    left: 61%;
+    color: black;
+    font-size: 15px;
+    /* padding: 10px 20px; */
+    padding: 0%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+.fy-img:hover .side3
+{
+    left: 63%;
+}
+.side4{
+    position: absolute;
+    left: 85%;
+    color: black;
+    font-size: 15px;
+    /* padding: 10px 20px; */
+    padding: 0%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+.fy-img:hover .side4
+{
+    left: 88%;
+}
+
+@media (min-width:320px) and (max-width:991px)
+{
+    .sidearrow
+{
+    display: none;
+}
+
+.side1{
+    display: none;
+}
+
+.side2{
+    display: none;
+}
+
+.side3{
+    display: none;
+}
+.side4{
+    display: none;
+}
+}
+
+
+/* -------------------------------------------------------------- */
+
+
+.a-all-product{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+  }
+  
+
+
+  .a-all-product:hover{
+    color: black;
+  }

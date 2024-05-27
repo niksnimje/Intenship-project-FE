@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <form action="" id="signup" class="form">
+        <div class="main-box">
+            <div class="logo">
+            <a href=""><img src="img/logo.png" alt=""></a> <br><br>
+            </div>
+            <div class="div">
+                <h1>Log in</h1> <br>
+                <p>Enter your email and we'll send you a login code</p> <br><br>
+                <span>Email</span><br>
+                <span id="email-error" style="color: red;"></span>
+                <input type="email"  id="email"  >
+                <br> <br>
+                <button>Continue</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        let form = document.getElementById("signup")
+console.log(form)
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    let obj={
+        email:document.getElementById("email").value,
+    }
+
+    localStorage.setItem('user', JSON.stringify(obj));
+
+
+    let valid = true
+    let email = document.getElementById("email")
+
+    if (email.value == "") {
+        valid = false
+        document.getElementById("email-error").innerText = "Email is reuied";
+        document.getElementById("email").style.border=" 2px solid red"
+    }
+    else {
+
+        document.getElementById("email-error").innerText = ""
+    }
+
+    if (valid) {
+        alert("Submit Success")
+        window.location.assign("index.html")
+    }
+    else {
+        alert("Not Sumbit")
+    }
+
+})
+    </script>
+</body>
+</html>
