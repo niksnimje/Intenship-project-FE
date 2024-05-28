@@ -367,18 +367,9 @@
                                           </a>
                                     </li>
                                     <li class="pe-4 pt-2  ">
-                                        <a href="#" >
-                                          <button class="btn p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" id="cart-page"><img src="img/icon-3.png" alt=""></button>
+                                        <a href="cart.html" >
+                                          <img src="img/icon-3.png" alt=""></button>
 
-                                          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                                            <div class="offcanvas-header">
-                                              <h5 id="offcanvasRightLabel">Cart Page </h5>
-                                              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                            </div>
-                                            <div class="offcanvas-body">
-                                              
-                                            </div>
-                                          </div>
                                         </a>
                                     </li>
                                 </ul>
@@ -445,7 +436,7 @@
                         <p class="ps-3" id="product-price"></p>
                         <span class="ps-3">Recycle
                             Recycle and get 15% off your next order! - Find out more</span> <br> <br><br>
-                        <a href="" class="Des-btn ms-3 " id="cart-page" >Add To Bag</a>
+                        <a href="" class="Des-btn ms-3 " id="cart-page1" >Add To Bag</a>
                     </div>
 
                     <div class="row">
@@ -646,7 +637,7 @@ Together with the Ultimate Detangler, avoid breakage and enjoy smooth, detangled
     // Display these details on the description page
     document.getElementById('product-title').textContent = title;
     document.getElementById('product-image').src = image;
-    document.getElementById('product-price').textContent = `Price: ${price}`;
+    document.getElementById('product-price').textContent = `Price: £ ${price}`;
     document.getElementById('product-image-hov').src = hoverImage;
     document.getElementById('product-category').textContent = `Category: ${category}`;
 });

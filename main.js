@@ -166,7 +166,6 @@ $(document).ready(function(){
 
 
 
-
   let products = [];
   let products2 = [];
   let products3 = [];
@@ -199,7 +198,7 @@ $(document).ready(function(){
               displayProducts(products3, 'products-container-3');
           })
           .catch(error => console.error('Error fetching products:', error));
-      
+  
       // Fetch products for the fourth row
       fetch('https://intenship-project-be.onrender.com/product_4')
           .then(response => response.json())
@@ -208,6 +207,19 @@ $(document).ready(function(){
               displayProducts(products4, 'products-container-4');
           })
           .catch(error => console.error('Error fetching products:', error));
+  
+      // Add event listeners for sorting
+      document.getElementById('sort-asc').addEventListener('click', (e) => {
+          e.preventDefault();
+          console.log('Sorting Low to High');
+          sortProducts('asc');
+      });
+  
+      document.getElementById('sort-desc').addEventListener('click', (e) => {
+          e.preventDefault();
+          console.log('Sorting High to Low');
+          sortProducts('desc');
+      });
   });
   
   function displayProducts(products, containerId) {
@@ -223,33 +235,41 @@ $(document).ready(function(){
               <img id="${containerId}-img-${id}" src="${image}" alt="${title}">
               <div class="product1-con">
                   <h3>${title}</h3>
-                  <p>Price: ${price}</p>
-                  <a href="#" class="Addtocard ms-4">Add To Bag</a>
+                  <p>Price: £ ${price}</p>
+                  <a href="" class="Addtocard ms-4" id="Add_TO_Cart22">Add To Bag</a>
               </div>
           </div>
       </a>
       `;
   }
   
+  
+
+  let addtocart = document.getElementById("cart-page1")
+  addtocart.addEventListener("click",(e)=>{
+    e.preventDefault()
+    alert("Ho Gya Hai !!")
+  })
+
+
+
   function changeImage(imgId, newSrc) {
       const img = document.getElementById(imgId);
       img.src = newSrc;
   }
   
-  // Sorting functionality
-  let sortAtoZBtn = document.getElementById("Short-A");
-  let sortZtoABtn = document.getElementById("Short-B");
+  function sortProducts(order) {
+      const allProducts = [...products];
+      if (order === 'asc') {
+          allProducts.sort((a, b) => a.price - b.price);
+      } else if (order === 'desc') {
+          allProducts.sort((a, b) => b.price - a.price);
+      }
   
-  sortAtoZBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      let sortedProducts = product.sort((a, b) => a.price - b.price);
-      displayProducts(sortedProducts, 'products-container');
-  });
+      console.log('Sorted Products:', allProducts);
   
-  sortZtoABtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      let sortedProducts = product.sort((a, b) => b.price - a.price);
-      displayProducts(sortedProducts, 'products-container');
-  });
+      // Display sorted products in respective containers
+      displayProducts(allProducts.slice(0, products.length), 'products-container');
+      
+  }
   
-
